@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 国庆节祝福</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        red: '#E63946',
+                        gold: '#F4A261',
+                        yellow: '#FFD166',
+                        orange: '#FF8C42',
+                        green: '#06D6A0',
+                        blue: '#4A90E2',
+                        dark: '#1E293B',
+                        navy: '#0B1D3A',
+                    },
+                    fontFamily: {
+                        comic: ['Comic Neue', 'cursive'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow-glow { text-shadow: 0 0 12px rgba(230,57,70,0.7); }
+            .text-shadow-gold { text-shadow: 0 0 20px rgba(244,162,97,0.6), 0 0 40px rgba(244,162,97,0.3); }
+            .animate-float { animation: float 3s ease-in-out infinite; }
+            .animate-twinkle { animation: twinkle 2s ease-in-out infinite; }
+            .animate-firework { animation: fireworkExplode 1.2s ease-out forwards; }
+            .btn-hover { transition: all 0.3s ease; }
+            .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(230,57,70,0.3); }
+            .card-shadow { filter: drop-shadow(0 6px 12px rgba(0,0,0,0.08)); }
+            .red-glow { box-shadow: 0 0 25px rgba(230,57,70,0.2), 0 0 50px rgba(230,57,70,0.1); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        @keyframes fireworkExplode {
+            0% { transform: scale(0.5); opacity: 1; }
+            50% { transform: scale(2.5); opacity: 0.9; }
+            100% { transform: scale(3.5); opacity: 0; }
+        }
+        @keyframes sparkle {
+            0% { transform: translate(0,0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--tx),var(--ty)) scale(0); opacity: 0; }
+        }
+        .spark {
+            animation: sparkle 0.8s ease-out forwards;
+            animation-delay: var(--del, 0s);
+        }
+    </style>
+</head>
+<body class="font-comic bg-gradient-to-br from-red/[0.08] via-white to-gold/[0.08] min-h-screen overflow-x-hidden">
+    <!-- ========== 导航栏 ========== -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-flag text-red text-3xl animate-float"></i>
+                <span class="font-poppins font-bold text-2xl text-red">🇨🇳 盛世华诞</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="font-bold text-red hover:text-red/80 transition-colors">首页</a>
+                <a href="#blessings" class="font-bold text-gold hover:text-gold/80 transition-colors">祝福祖国</a>
+                <a href="#knowledge" class="font-bold text-blue hover:text-blue/80 transition-colors">国庆知识</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-red text-2xl"><i class="fa fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg px-4 py-2">
+            <a href="index.html" class="block py-2 font-bold text-red">首页</a>
+            <a href="#blessings" class="block py-2 font-bold text-gold">祝福祖国</a>
+            <a href="#knowledge" class="block py-2 font-bold text-blue">国庆知识</a>
+        </div>
+    </nav>
+
+    <!-- ========== 英雄区域 ========== -->
+    <section class="pt-32 pb-20 relative overflow-hidden">
+        <!-- 装饰星星 -->
+        <div class="animate-twinkle absolute top-16 left-[8%] text-yellow text-2xl" style="--dur:2.5s;--del:0s;">★</div>
+        <div class="animate-twinkle absolute top-24 right-[12%] text-yellow text-xl" style="--dur:3s;--del:0.5s;">★</div>
+        <div class="animate-twinkle absolute top-8 right-[30%] text-yellow text-3xl" style="--dur:2s;--del:1s;">★</div>
+        <div class="animate-twinkle absolute bottom-36 left-[20%] text-yellow text-xl" style="--dur:3.5s;--del:0.3s;">★</div>
+        <div class="animate-twinkle absolute bottom-28 right-[15%] text-yellow text-2xl" style="--dur:2.8s;--del:0.8s;">★</div>
+
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-8">
+                <!-- 国旗图标 -->
+                <div class="inline-block mb-4">
+                    <i class="fa fa-flag text-red text-7xl md:text-8xl text-shadow-gold animate-float"></i>
+                </div>
+                <h1 class="font-poppins font-bold text-[clamp(2.5rem,8vw,4rem)] text-dark mb-4 leading-tight">
+                    盛世<span class="text-red text-shadow-glow">华诞</span>
+                </h1>
+                <p class="text-[clamp(1.2rem,3vw,1.5rem)] text-gray-700 mb-2">🇨🇳 庆祝中华人民共和国成立77周年 🇨🇳</p>
+                <p class="text-lg text-gray-500 mb-6">🎆 繁荣昌盛 · 国泰民安 🎆</p>
+                <!-- 浮动星星 -->
+                <div class="inline-block animate-float" style="animation-delay: 0.5s;">
+                    <i class="fa fa-star text-yellow text-3xl mx-1"></i>
+                    <i class="fa fa-star-o text-gold text-2xl mx-1"></i>
+                    <i class="fa fa-star text-yellow text-3xl mx-1"></i>
+                    <i class="fa fa-star text-yellow text-2xl mx-1"></i>
+                </div>
+            </div>
+
+            <!-- 倒计时 -->
+            <div class="max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 mb-8 border-4 border-red red-glow">
+                <h2 class="font-poppins font-bold text-2xl text-red mb-2">🎉 距离国庆节还剩</h2>
+                <p class="text-sm text-gray-500 mb-4">2026年10月1日（建国77周年）</p>
+                <div class="grid grid-cols-4 gap-3">
+                    <div class="bg-red/10 rounded-xl p-4">
+                        <div id="days" class="font-poppins font-bold text-[clamp(1.8rem,5vw,2.5rem)] text-red">00</div>
+                        <div class="font-bold text-gray-600">天</div>
+                    </div>
+                    <div class="bg-red/10 rounded-xl p-4">
+                        <div id="hours" class="font-poppins font-bold text-[clamp(1.8rem,5vw,2.5rem)] text-red">00</div>
+                        <div class="font-bold text-gray-600">时</div>
+                    </div>
+                    <div class="bg-red/10 rounded-xl p-4">
+                        <div id="minutes" class="font-poppins font-bold text-[clamp(1.8rem,5vw,2.5rem)] text-red">00</div>
+                        <div class="font-bold text-gray-600">分</div>
+                    </div>
+                    <div class="bg-red/10 rounded-xl p-4">
+                        <div id="seconds" class="font-poppins font-bold text-[clamp(1.8rem,5vw,2.5rem)] text-red">00</div>
+                        <div class="font-bold text-gray-600">秒</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 放烟花彩蛋按钮 -->
+            <div class="mb-8">
+                <button id="firework-btn" class="bg-red hover:bg-red/90 text-white font-poppins font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 egg-shadow">
+                    <i class="fa fa-bolt mr-2"></i> 🎆 点击放烟花 · 共庆华诞
+                </button>
+                <!-- 烟花容器 -->
+                <div id="firework-container" class="fixed inset-0 flex items-center justify-center pointer-events-none z-50 hidden">
+                    <div class="firework-item absolute text-6xl" style="left:20%;top:30%;">🎆</div>
+                    <div class="firework-item absolute text-6xl" style="left:60%;top:25%;">🎇</div>
+                    <div class="firework-item absolute text-6xl" style="left:40%;top:35%;">✨</div>
+                    <div class="firework-item absolute text-5xl" style="left:75%;top:40%;">🌟</div>
+                    <div class="firework-item absolute text-5xl" style="left:10%;top:45%;">⭐</div>
+                    <div class="firework-item absolute text-6xl" style="left:50%;top:20%;">🎉</div>
+                    <div class="firework-text absolute font-poppins font-bold text-4xl text-red text-shadow-glow">🇨🇳 祖国生日快乐！繁荣昌盛！🇨🇳</div>
+                </div>
+            </div>
+
+            <!-- 祝福按钮 -->
+            <div class="max-w-md mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <button id="bless-btn" class="bg-gold hover:bg-gold/90 text-white font-bold py-3 px-6 rounded-full shadow-lg btn-hover flex items-center justify-center">
+                    <i class="fa fa-heart mr-2"></i> 送一句国庆祝福
+                </button>
+                <a href="#knowledge" class="bg-blue hover:bg-blue/90 text-white font-bold py-3 px-6 rounded-full shadow-lg btn-hover flex items-center justify-center">
+                    <i class="fa fa-info-circle mr-2"></i> 国庆小知识
+                </a>
+            </div>
+
+            <!-- 祝福语展示 -->
+            <div id="blessing-display" class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 max-w-md mx-auto border-2 border-red hidden">
+                <p id="blessing-text" class="font-poppins font-bold text-xl text-red text-center"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 祝福祖国区 ========== -->
+    <section id="blessings" class="py-16 bg-white rounded-t-3xl">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-poppins font-bold text-[clamp(2rem,5vw,3rem)] text-red mb-4">🇨🇳 祝福祖国 🇨🇳</h2>
+                <div class="w-24 h-1.5 bg-yellow mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-3 text-lg">愿山河无恙，祖国繁荣昌盛 💝</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- 祝福卡片1 -->
+                <div class="bg-red/5 rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-red card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-flag text-red text-3xl mr-4"></i>
+                        <h3 class="font-poppins font-bold text-2xl text-red">给祖国</h3>
+                    </div>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start"><i class="fa fa-star text-yellow mt-1 mr-3"></i><span>愿祖国繁荣昌盛，国泰民安！</span></li>
+                        <li class="flex items-start"><i class="fa fa-star text-yellow mt-1 mr-3"></i><span>盛世华诞，普天同庆！</span></li>
+                        <li class="flex items-start"><i class="fa fa-star text-yellow mt-1 mr-3"></i><span>山河壮丽，岁月峥嵘，祖国万岁！</span></li>
+                    </ul>
+                </div>
+
+                <!-- 祝福卡片2 -->
+                <div class="bg-gold/10 rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-gold card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-users text-gold text-3xl mr-4"></i>
+                        <h3 class="font-poppins font-bold text-2xl text-gold">给家人</h3>
+                    </div>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start"><i class="fa fa-star-o text-red mt-1 mr-3"></i><span>国庆团圆，阖家欢乐！</span></li>
+                        <li class="flex items-start"><i class="fa fa-star-o text-red mt-1 mr-3"></i><span>家是最小国，国是千万家</span></li>
+                        <li class="flex items-start"><i class="fa fa-star-o text-red mt-1 mr-3"></i><span>愿我们的祖国越来越强大，生活越来越美好</span></li>
+                    </ul>
+                </div>
+
+                <!-- 祝福卡片3 -->
+                <div class="bg-blue/5 rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-blue card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-user-circle-o text-blue text-3xl mr-4"></i>
+                        <h3 class="font-poppins font-bold text-2xl text-blue">给朋友</h3>
+                    </div>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start"><i class="fa fa-star-o text-gold mt-1 mr-3"></i><span>国庆快乐，假期愉快！</span></li>
+                        <li class="flex items-start"><i class="fa fa-star-o text-gold mt-1 mr-3"></i><span>生在红旗下，长在春风里</span></li>
+                        <li class="flex items-start"><i class="fa fa-star-o text-gold mt-1 mr-3"></i><span>一起为祖国点赞，为假期干杯！</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 国庆知识区 ========== -->
+    <section id="knowledge" class="py-16 bg-gradient-to-br from-red/[0.04] to-gold/[0.04]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-poppins font-bold text-[clamp(2rem,5vw,3rem)] text-red mb-4">📖 国庆小知识 📖</h2>
+                <div class="w-24 h-1.5 bg-gold mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- 知识卡片1 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-calendar text-red text-3xl mr-4"></i>
+                        <h3 class="font-poppins font-bold text-2xl text-dark">📅 国庆节的由来</h3>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        1949年10月1日，毛泽东主席在天安门城楼上宣告中华人民共和国成立。
+                        1949年12月2日，中央人民政府委员会第四次会议通过决议，将每年10月1日定为国庆日。
+                        2026年，我们迎来了新中国成立77周年。
+                    </p>
+                </div>
+
+                <!-- 知识卡片2 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-flag text-red text-3xl mr-4"></i>
+                        <h3 class="font-poppins font-bold text-2xl text-dark">🇨🇳 国旗的含义</h3>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        中华人民共和国国旗为五星红旗。红色象征革命，大五角星代表中国共产党，
+                        四颗小五角星分别代表工人、农民、小资产阶级和民族资产阶级。
+                        五颗星相互联缀、疏密相间，象征中国人民大团结。
+                    </p>
+                </div>
+
+                <!-- 知识卡片3 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-music text-gold text-3xl mr-4"></i>
+                        <h3 class="font-poppins font-bold text-2xl text-dark">🎵 国歌的故事</h3>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        中华人民共和国国歌为《义勇军进行曲》，由田汉作词、聂耳作曲，
+                        原是电影《风云儿女》的插曲。歌曲诞生于1935年抗战时期，
+                        表达了中华民族不屈不挠的斗争精神。2004年正式写入宪法。
+                    </p>
+                </div>
+
+                <!-- 知识卡片4 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-trophy text-gold text-3xl mr-4"></i>
+                        <h3 class="font-poppins font-bold text-2xl text-dark">🎊 国庆庆典</h3>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        每逢五周年、十周年会有盛大的阅兵式和群众游行。
+                        国庆节期间，全国各地张灯结彩，悬挂国旗，举办文艺演出和烟花晚会。
+                        这是每一个中国人最自豪的时刻——为祖国的强大而骄傲！
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 页脚 ========== -->
+    <footer class="bg-navy text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-flag text-red text-2xl animate-float"></i>
+                        <span class="font-poppins font-bold text-xl">🇨🇳 盛世华诞 2026</span>
+                    </div>
+                    <p class="text-gray-400">愿山河无恙，祖国繁荣昌盛</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-yellow text-lg mb-2">🎆 热烈庆祝中华人民共和国成立77周年 🎆</p>
+                    <p class="text-gray-500">© 2026 国庆祝福 | 我爱你，中国 ❤️</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏移动端菜单
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // ========== 国庆倒计时（2026年10月1日） ==========
+        function updateCountdown() {
+            const targetDate = new Date('2026-10-01T00:00:00');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                ['days','hours','minutes','seconds'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = '00';
+                });
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const setVal = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = val.toString().padStart(2, '0');
+            };
+            setVal('days', days);
+            setVal('hours', hours);
+            setVal('minutes', minutes);
+            setVal('seconds', seconds);
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // ========== 随机祝福语 ==========
+        const blessings = [
+            '🇨🇳 祖国生日快乐，繁荣昌盛！',
+            '🎆 盛世华诞，普天同庆！',
+            '❤️ 我爱你，中国！',
+            '🌟 愿山河无恙，国泰民安！',
+            '🎉 国庆快乐，假期愉快！',
+            '🇨🇳 生在红旗下，长在春风里！',
+            '✨ 愿祖国越来越强大！',
+            '🥳 国庆七天乐，天天都快乐！',
+            '💪 为祖国点赞，为自己加油！',
+            '🎊 举国同庆，万家团圆！'
+        ];
+
+        document.getElementById('bless-btn').addEventListener('click', function() {
+            const display = document.getElementById('blessing-display');
+            const text = document.getElementById('blessing-text');
+            const randomBless = blessings[Math.floor(Math.random() * blessings.length)];
+            text.textContent = randomBless;
+            display.classList.remove('hidden');
+            this.innerHTML = '<i class="fa fa-check mr-2"></i> 祝福已送达 ❤️';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fa fa-heart mr-2"></i> 送一句国庆祝福';
+            }, 2000);
+        });
+
+        // ========== 烟花绽放效果 ==========
+        const fireworkBtn = document.getElementById('firework-btn');
+        const fireworkContainer = document.getElementById('firework-container');
+        if (fireworkBtn && fireworkContainer) {
+            const fireworkItems = document.querySelectorAll('.firework-item');
+            const fireworkText = document.querySelector('.firework-text');
+
+            fireworkBtn.addEventListener('click', () => {
+                fireworkContainer.classList.remove('hidden');
+
+                fireworkItems.forEach((item, index) => {
+                    const dur = 0.8 + Math.random() * 0.6;
+                    const del = index * 0.15;
+                    item.style.animation = 'none';
+                    item.style.opacity = '1';
+                    void item.offsetWidth;
+                    item.style.animation = `fireworkExplode ${dur}s ease-out forwards ${del}s`;
+                });
+
+                if (fireworkText) {
+                    fireworkText.style.transform = 'scale(0.5)';
+                    fireworkText.style.opacity = '1';
+                    fireworkText.style.animation = 'none';
+                    void fireworkText.offsetWidth;
+                    fireworkText.style.animation = 'fireworkExplode 1.5s ease-out forwards 0.5s';
+                }
+
+                setTimeout(() => { fireworkContainer.classList.add('hidden'); }, 2500);
+
+                fireworkBtn.innerHTML = '<i class="fa fa-check mr-2"></i> 🎆 烟花绽放！祖国生日快乐！';
+                fireworkBtn.classList.add('bg-green');
+                fireworkBtn.classList.remove('bg-red');
+
+                setTimeout(() => {
+                    fireworkBtn.innerHTML = '<i class="fa fa-bolt mr-2"></i> 🎆 点击放烟花 · 共庆华诞';
+                    fireworkBtn.classList.remove('bg-green');
+                    fireworkBtn.classList.add('bg-red');
+                }, 4000);
+            });
+        }
+    </script>
+</body>
+</html>
